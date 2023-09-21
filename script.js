@@ -4,14 +4,19 @@ document.body.appendChild(getSumBtn);
 
 const getSum = () => {
 //Add your code here
-	const table=document.getElementByTagsName("table")
-	const tdArr=document.getElement.querySelector.All('.price');
-	let sum=tdArr.reduce((preve,element)=>[
-		return preve+element;
-	])
+	const table=document.getElementsByTagName('table')[0];
+	const tdArr=document.querySelectorAll('.price')
+	let sum=0;
+    tdArr.forEach((ele)=>{
+        console.log(ele.innerText);
+        sum+=Number.parseInt(ele.innerText);
+    })
+   
 	const tr=document.createElement('tr');
 	const td=document.createElement('td');
+    td.innerText=sum;
 	tr.appendChild(td);
+	table.appendChild(tr);
 	
   
 };
